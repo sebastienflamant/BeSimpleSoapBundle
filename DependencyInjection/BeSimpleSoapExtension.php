@@ -51,9 +51,9 @@ class BeSimpleSoapExtension extends Extension
 
         $this->registerCacheConfiguration($config['cache'], $container, $loader);
 
-        if (!empty($config['clients'])) {
+
             $this->registerClientConfiguration($config['clients'], $container, $loader);
-        }
+
 
         $container->setParameter('besimple.soap.definition.dumper.options.stylesheet', $config['wsdl_dumper']['stylesheet']);
 
@@ -158,7 +158,7 @@ class BeSimpleSoapExtension extends Extension
                 return Cache::TYPE_NONE;
 
             case 'disk':
-                return Cache::TYPE_DISK;
+                return 1;
 
             case 'memory':
                 return Cache::TYPE_MEMORY;
